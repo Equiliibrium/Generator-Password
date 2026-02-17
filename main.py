@@ -1,5 +1,6 @@
 import string    
 import secrets
+import pyperclip
 
 def generar_password(longitud = 16):
     caracteres = string.ascii_letters + string.digits + string.punctuation
@@ -14,12 +15,13 @@ if __name__ == "__main__":
     try:
         largo = int(entrada if entrada else 16)
         nueva_pass = generar_password(largo)
+        pyperclip.copy(nueva_pass)
         print(f"\n Tu nueva contraseña es {nueva_pass}")
         print(f"Se recomienda no compartirla con nadie")
     except ValueError:
         print("Error: Por favor, ingresa un número válido")
         
 
-    
+
 
                 
